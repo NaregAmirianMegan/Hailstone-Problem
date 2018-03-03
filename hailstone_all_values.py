@@ -43,7 +43,7 @@ def analyze(num):
             status.hailstone_archive[hail_order[i]] = count
     return count
 
-print("Q to quite and save dictionary to file in data directory")
+print("Control-C to stop calculations and show prompt options.")
 
 def loop():
     while(True):
@@ -58,13 +58,13 @@ def main():
     try:
         loop()
     except KeyboardInterrupt:
-        Uin = input("Enter a command (q to quit and d to show dict length and continue): ")
+        Uin = input("Enter a command (q to quit ; d to show dict length and continue): ")
         if(Uin == "q"):
             pass
         elif(Uin == "d"):
             print(len(status.hailstone_archive))
             UinPrime = input("Continue (Y/N): ")
-            if(UinPrime == "Y"):
+            if(UinPrime == "Y" or UinPrime == "y"):
                 main()
             else:
                 pass
@@ -74,7 +74,7 @@ main()
 
 main_input = input("Would you like to save the hailstone_dictionary that was created? (Y/N): ")
 
-if(main_input == "Y"):
+if(main_input == "Y" or main_input == "y"):
     print("Saving dictionary to data directory...")
 
     #save data
